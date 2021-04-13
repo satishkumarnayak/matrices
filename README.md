@@ -1,2 +1,3 @@
 # Make Way For The Matrix
-## Transpose matrix
+## Transpose matrix<BR>
+## Binary Search<BR>  
