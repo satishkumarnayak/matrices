@@ -13,11 +13,11 @@ public class BinarySearchMatrixTest {
     binarySearch = new BinarySearchMatrix();
   }
 
-  @Test
+//  @Test
   public void testBinarySearch() {
     int[][] input = {{1, 2, 5, 7},
                     {8, 9, 10, 12},
-                     {15, 20, 25, 26}};
+                    {15, 20, 25, 26}};
 
 
     assertTrue(binarySearch.search(input, 9));
@@ -26,13 +26,12 @@ public class BinarySearchMatrixTest {
     assertTrue(binarySearch.search(input, 12));
     assertTrue(binarySearch.search(input, 1));
     assertTrue(binarySearch.search(input, 15));
-
     assertFalse(binarySearch.search(input, 27));
     assertFalse(binarySearch.search(input, 0));
 
   }
 
-  // @Test
+ //  @Test
   public void testBS() {
     int[] input = {1, 2, 5, 7};
 
@@ -43,6 +42,25 @@ public class BinarySearchMatrixTest {
     assertFalse(binarySearch.binarySearch(input, 0, 3, 8));
     assertFalse(binarySearch.binarySearch(input, 0, 3, -1));
   }
+   
+   @Test
+   public void testBinarySearchBetter() {
+     int[][] input = {{1, 2, 5, 7},
+                     {8, 9, 10, 12},
+                     {15, 20, 25, 26}};
+
+
+     assertTrue(binarySearch.binarySearch3(input, 7));
+     assertTrue(binarySearch.binarySearch3(input, 5));
+     assertTrue(binarySearch.binarySearch3(input, 2));
+     assertTrue(binarySearch.binarySearch3(input, 1));
+     assertTrue(binarySearch.binarySearch3(input, 12));
+     assertTrue(binarySearch.binarySearch3(input, 26));
+     assertTrue(binarySearch.binarySearch3(input, 10));
+     
+
+
+   }
 
 
 }

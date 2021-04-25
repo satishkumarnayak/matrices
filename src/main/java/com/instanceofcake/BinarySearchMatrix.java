@@ -13,26 +13,26 @@ public class BinarySearchMatrix {
     while (low < high && mid < high) {
 
       output = binarySearch2(input[mid], 0, input[mid].length - 1, target);
-      if(output == 0) {
+      if (output == 0) {
         result = true;
         break;
       }
-        
 
-      else if(output == -1) {
-        
+
+      else if (output == -1) {
+
         high = mid;
-        mid = low + high /2;
-        
-      } 
-    
-      else if(output == 1) {
-        low = mid;
-        mid = low + high /2; 
-       
+        mid = low + high / 2;
+
       }
-     
-     
+
+      else if (output == 1) {
+        low = mid;
+        mid = low + high / 2;
+
+      }
+
+
     }
 
     return result;
@@ -48,12 +48,12 @@ public class BinarySearchMatrix {
       } else if (target < array[mid]) {
         end = mid;
         result = binarySearch2(array, start, end, target);
-        if(result != 0)
+        if (result != 0)
           result = -1;
       } else if (target > array[mid]) {
         start = mid;
         result = binarySearch2(array, start, end, target);
-        if(result != 0)
+        if (result != 0)
           result = 1;
       }
     }
@@ -78,4 +78,66 @@ public class BinarySearchMatrix {
     return result;
   }
 
+  
+ public boolean binarySearch3(int[][] array, int target) {
+      
+  for(int i = 0; i < array.length ; i++) {
+    int currentCellVal = array[i][array.length];
+    System.out.println(currentCellVal);
+    if(target == currentCellVal) {
+      return true;
+    }
+    if(target < currentCellVal) {
+      for(int j = array[i].length -1; j >= 0; j--) {
+        currentCellVal = array[i][j];
+        if(target == currentCellVal) 
+          return true;
+      }
+    }
+   
+    
+  }
+     
+    return false;
+  }
+
+ public void printMatrix(int[][] matrix) {
+   for (int row = 0; row < matrix.length; row++) {
+     System.out.println(Arrays.toString(matrix[row]));
+   }
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 }
